@@ -1,0 +1,13 @@
+﻿@model MVCTemplates.ViewModels.Person.PersonCustomDetailViewModel
+
+@{
+    ViewBag.Title = "Person Detail";
+}
+
+<div class="jumbotron">
+    <h1>Person Detail - Custom Display</h1>
+</div>
+
+@Html.ActionLink("Éditer", "Edit", new { personId = Model.Person.Id })
+
+@Html.DisplayFor(m => m.Person)

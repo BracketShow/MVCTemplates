@@ -1,0 +1,33 @@
+﻿@model MVCTemplates.ViewModels.Home.HomeIndexViewModel
+
+@{
+    ViewBag.Title = "People List";
+}
+
+<div class="jumbotron">
+    <h1>People List</h1>
+</div>
+
+<div class="table table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Ville</th>
+        <th></th>
+        <th></th>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < @Model.Persons.Count; i++)
+            {
+                <tr>
+                    <td>@Model.Persons[i].FirstName</td>
+                    <td>@Model.Persons[i].LastName</td>
+                    <td>@Model.Persons[i].City</td>
+                    <td><a href="@Url.Action("Index", "Person", new {personId = Model.Persons[i].Id})">Voir</a></td>
+                    <td><a href="@Url.Action("CustomDisplay", "Person", new {personId = Model.Persons[i].Id})">Voir - Version courte</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

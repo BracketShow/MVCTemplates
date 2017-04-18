@@ -1,0 +1,10 @@
+﻿@model MVCTemplates.Models.Person
+
+<tr>
+    @Html.HiddenFor(m => m.Id)
+    <td>@Html.DisplayFor(m => m.FirstName)</td>
+    <td>@Html.DisplayFor(m => m.LastName)</td>
+    <td>@Html.DisplayFor(m => m.City)</td>
+    <td><a href="@Url.Action("Index", "Person", new {personId = Model.Id})">Voir</a></td>
+    <td><a href="@Url.Action("CustomDisplay", "Person", new {personId = Model.Id})">Voir - Version courte</a></td>
+</tr>

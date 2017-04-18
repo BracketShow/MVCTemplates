@@ -1,0 +1,20 @@
+﻿@model MVCTemplates.ViewModels.Person.PersonDetailViewModel
+
+@{
+    ViewBag.Title = "Person Detail - Edit";
+}
+
+<div class="jumbotron">
+    <h1>Person Detail - Edit</h1>
+</div>
+
+@using (Html.BeginForm("Save", "Person", FormMethod.Post))
+{
+    @Html.EditorFor(m => m.Person)
+
+    <button type="submit" class="btn btn-default btn-primary">
+        <span class="glyphicon glyphicon-ok-sign"></span> Sauvegarder
+    </button>
+}
+
+
